@@ -9,3 +9,9 @@ image::admin.png[]
 == App.js 引用 ListGuesser 用户
 
 image::resource-list-guesser.png[]
+
+== App.js 引用 UserList 用户
+
+image::resource-user-list.png[]
+
+
