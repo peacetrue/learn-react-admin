@@ -25,3 +25,7 @@ image::dashboard.png[]
 == 登陆页
 
 image::login-page.png[]
+
+== 手机端
+
+image::mobile.png[]
