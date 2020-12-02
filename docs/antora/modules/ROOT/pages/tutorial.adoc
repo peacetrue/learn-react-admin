@@ -29,3 +29,11 @@ image::login-page.png[]
 == 手机端
 
 image::mobile.png[]
+
+== 自定义 dataProvider
+
+image::data-provider.png[]
+
+官方提供的 dataProvider 不兼容 https://jsonplaceholder.typicode.com[jsonplaceholder] 网站。
+
+
