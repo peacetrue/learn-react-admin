@@ -14,4 +14,6 @@ image::resource-list-guesser.png[]
 
 image::resource-user-list.png[]
 
+== App.js 引用 Post 完整 CRUD 功能
 
+image::resource-posts.png[]
