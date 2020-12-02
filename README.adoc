@@ -1,5 +1,5 @@
-= antora 模板项目
+= 学习 React Admin
 xiayx <xiayouxue@hotmail.com>
-v1.0, 2019-10-16: SNAPSHOT
+v1.0, 2020-12-02: SNAPSHOT
 
-详情参考 https://peacetrue.cn/summarize/index.html[安宁微服务^]。
+详情参考 https://peacetrue.cn/summarize/learn-react-admin/index.html[安宁的博客^]。

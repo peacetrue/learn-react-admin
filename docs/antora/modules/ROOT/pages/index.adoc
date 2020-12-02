@@ -1,9 +1,15 @@
 = 简介
 
-peacetrue-template-antora 是一个基于 antora 的 xref:github-template.adoc[github 模板项目]。
 
-包含以下内容：
 
-* 文档目录 /docs 包含以下内容：
-** ``README.graffle``设计图表
-** 一个符合 https://antora.org[antora^] 要求的文档结构
+一个前端框架，用于使用 ES6，React 和 Material Design 在 REST/GraphQL API 之上构建在浏览器中运行的管理应用程序。由 marmelab 开源和维护。
+
+react-admin 基于 REST/GraphQL API 的设计，使其组件在调用 API 接口时非常方便，这是它与其他后台管理框架的一大区别。
+
+== 参考资料
+
+* https://marmelab.com/react-admin[react-admin 官网^]
+* https://github.com/marmelab/react-admin[react-admin github^]
+* https://material-ui.com/zh/[react-admin 依赖的 material-ui]
+// https://material-ui.com/zh/components/material-icons/
+
