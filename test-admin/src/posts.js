@@ -6,15 +6,21 @@ import {
     EditButton,
     Filter,
     List,
+    minLength,
     ReferenceField,
     ReferenceInput,
+    required,
+    SaveButton,
     SelectInput,
     SimpleForm,
     SimpleList,
     TextField,
-    TextInput
+    TextInput,
+    Toolbar
 } from 'react-admin';
 import {useMediaQuery} from '@material-ui/core';
+import {useForm} from 'react-final-form'
+
 
 const PostFilter = (props) => (
     <Filter {...props}>
@@ -65,14 +71,51 @@ export const PostEdit = props => (
     </Edit>
 );
 
-export const PostCreate = props => (
-    <Create {...props}>
-        <SimpleForm>
-            <ReferenceInput source="userId" reference="users">
-                <SelectInput optionText="name"/>
-            </ReferenceInput>
-            <TextInput source="title"/>
-            <TextInput source="body" multiline/>
-        </SimpleForm>
-    </Create>
-);
+const PostCreateToolbar = props => {
+    console.info('PostCreateToolbar.props:', props);
+    let formApi = useForm();
+    return (
+        <Toolbar {...props} >
+            <SaveButton
+                saving={props.saving}
+                handleSubmitWithRedirect={event => {
+                    formApi.change('stateId', '1');
+                    return props.handleSubmitWithRedirect(event)
+                }}
+                label="stateId=1 not required"
+                redirect="show"
+                submitOnEnter={true}
+            />
+            <SaveButton
+                saving={props.saving}
+                handleSubmitWithRedirect={event => {
+                    formApi.change('stateId', '2');
+                    return props.handleSubmitWithRedirect(event)
+                }}
+                label="stateId=2 required"
+                redirect={false}
+                submitOnEnter={false}
+                variant="text"
+            />
+        </Toolbar>
+    )
+};
+
+const requiredInstance = required();
+const stateRequired = (value, values) => {
+    return values.stateId === '1' ? undefined : requiredInstance(value, values)
+};
+export const PostCreate = props => {
+    return (
+        <Create {...props}>
+            <SimpleForm toolbar={<PostCreateToolbar/>}>
+                <ReferenceInput source="userId" reference="users">
+                    <SelectInput optionText="name" validate={[required()]}/>
+                </ReferenceInput>
+                {/*<TextInput source="stateId" validate={[required()]}/>*/}
+                <TextInput source="title" validate={[stateRequired, minLength(2)]}/>
+                <TextInput source="body" multiline validate={[stateRequired, minLength(2)]}/>
+            </SimpleForm>
+        </Create>
+    )
+};
