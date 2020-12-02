@@ -1,2 +1,3 @@
 * xref:index.adoc[简介]
 * xref:tutorial.adoc[基础教程]
+* xref:advanced.adoc[进阶教程]
