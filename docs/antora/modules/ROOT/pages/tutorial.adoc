@@ -5,3 +5,7 @@
 == App.js 只含有 Admin
 
 image::admin.png[]
+
+== App.js 引用 ListGuesser 用户
+
+image::resource-list-guesser.png[]
